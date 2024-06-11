@@ -1,6 +1,6 @@
 <?php
     // O comando abaixo mostra os dados
-    echo "<h1>Olá, Mundo</h1><br> <h2>muito prazer</h2>";
+    echo "<h1>Olá, Mundo</h1><br/> <h2>muito prazer</h2>";
 
     // Como declarar variaveis
     $nome = "Yago";
@@ -10,7 +10,7 @@
 
     // O comando abaixo mostra os dados na variavel
     echo $nome . $sobrenome . $idade;
-    echo "<br>";
+    echo "<br/>";
 
     // combinando variaveis em uma variável
     $nomeCompleto = $nome . " " . $sobrenome;    
@@ -18,7 +18,7 @@
 
     // Para obter o comprimento de uma string em PHP, usamos o strlen()
     echo strlen($nomeCompleto); // Saida é 12, pois o PHP conta acentos como um caractere
-    echo "<br>";
+    echo "<br/>";
 
     // Para substituir partes de uma string, usamos a função str_replace()
     $novo_nome = str_replace("Aparecido", "Terra", $nomeCompleto);
