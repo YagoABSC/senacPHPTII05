@@ -82,5 +82,32 @@ echo $condicao1 || $condicao2 ? "verdadeiro <br/>" : "falso<br/>";
 echo "E lógico (OR): ";
 echo !$condicao2 ? "verdadeiro <br/>" : "falso<br/>";
 
+// Operações com booleanos
+# Operação com ADN
+$tem_idade = true;
+$tem_carro = false;
 
+$pode_entrar = $tem_idade && $tem_cartao;
+echo "Pode entrar na festa: " . ($pode_entrar ? "sim" : "Não") . "<br/>";
+
+# Operação com OR
+$tem_passaporte = true;
+$tem_visto = false;
+
+$pode_entrar = $tem_passaporte || $tem_visto;
+echo "Pode viajar para o exterior: " . ($pode_viajar ? "sim" : "Não") . "<br/>";
+
+// Números Decimais (floats)
+$altura = 1.82;
+$peso = 79.5;
+
+echo "A altura é: $altura metros <br/>";
+echo "O peso é: $peso kg <br/>";
+
+// Operacões com floats
+$preco_produto = 19.99;
+$quantidade = 3;
+
+$totalCarrinho = $preco_produto * $quantidade;
+echo "Total da compra: R$ $totalCarrinho <br/>";
 ?>
