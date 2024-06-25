@@ -78,6 +78,12 @@ for ($i = 1; $i <= 10; $i++) {
     echo $tabuada_numero. " x ". $i. " = ". $tabuada_numero * $i. "<br>";
 }
 
+// Aecio Solutions
+// for($i = 1; $i <= 10; $i++) {
+//     $resultado = $tabuada_numero * $i;
+//     echo "$tabuada_numero X $i = $resultado <br>";
+// }
+
 echo "<hr>";
 
 // Solução com while
@@ -86,6 +92,14 @@ while ($cont_tabuada <= 10){
     echo $tabuada_numero. " x ". $cont_tabuada. " = ". $tabuada_numero * $cont_tabuada. "<br>";
     $cont_tabuada++;
 }
+
+// Aecio Solutions
+// $i = 1;
+// while($i <= 10) {
+//     $resultado = $tabuada_numero * $i;
+//     echo "$tabuada_numero X $i = $resultado <br>";
+//     $i++;
+// }
 
 echo "<hr> <hr>";
 
@@ -102,7 +116,29 @@ $sequencia_fibonacci = 10;
 // Solução com for
 
 
+// Aecio Solutions
+$anterior = 0;
+$atual = 10;
+$termos = 10;
+
+// echo "$anterior $atual ";
+// for($i = 2; $i <= $termos; $i++) {
+//     $proximo = $anterior + $atual;
+//     echo "$proximo ";
+//     $anterior = $atual;
+//     $atual = $proximo;
+// }
+
 // Solução com while
+
+$contFibo = 2;
+while ($contFibo <= $termos) {
+    $proximo = $anterior + $atual;
+    echo "$proximo ";
+    $anterior = $atual;
+    $atual = $proximo;
+    $contFibo++;
+}
 
 echo "<hr> <hr>";
 
@@ -118,7 +154,7 @@ $A = 5;
 $B = 10;
 $C = 15;
 
-if ($A + $B == $C ) {
+if ($A + $B == $C) {
     echo "A soma de " . $A . "+" . $B . " é igual ao valor da variável C(" . $C . ")"; ;
 } else{
     echo "A soma de ". $A. "+". $B. " não é igual ao valor da variável C(" . $C .  ")";
