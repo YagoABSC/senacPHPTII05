@@ -15,28 +15,50 @@ $numero = 5; //Número fornecido pelo usuário.
 
 // Solução com for
 for ($i=0; $i <= 5; $i++) {
-    echo "Contagem Regressiva: " . $numero-$i . "<br>"; 
+    // echo "Contagem Regressiva: " . $numero-$i . "<br>"; 
     echo "Faltam " . $numero - $i . " segundos <br>";
 }
+
+// Aecio solutions
+// for($i = $numero; $i >= 0; $i--) {
+//     echo "Faltam $i segundos <br>";
+// }
+// echo "<br>";
 
 echo "<hr>";
 
 // Solução com while
 while ($numero > -1) {
-    echo "Contagem Regressiva: ". $numero. "<br>";
+    // echo "Contagem Regressiva: ". $numero. "<br>";
     echo "Faltam ". $numero. " segundos <br>";
     $numero--;
 }
 
 echo "<hr>";
 
+// Aecio Solutions
+// $i = $numero;
+// while($i >= 0) {
+//     echo "Faltam $i segundos <br>";
+//     $i--;
+// }
+// echo "<br>";
+
+
 // Solução com do-while
 $n = 5;
 do {
-    echo "Contagem Regressiva: ". $n. "<br>";
+    // echo "Contagem Regressiva: ". $n. "<br>";
     echo "Faltam ". $n . " segundos <br>";
     $n--;
 } while ($n > -1);
+
+// Aecio Solutions
+// $i = $numero;
+// do {
+//     echo "Faltam $i segundos <br>";
+//     $i--;
+// } while ($i >= 0);
 
 echo "<hr> <hr>";
 
