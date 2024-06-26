@@ -247,6 +247,12 @@ $minutagem = intval($horas);
 
 echo "O equivalente total em minutos de $horas_string é: " . $horas . " minutos <br>";
 
+// Aecio Solutions
+// $horas = explode(":", $horas_string);
+// $total_minutos = $horas[0] * 60 + $horas[1];
+
+// echo "O equivalente total em minutos de $horas_string é: $total_minutos <br>";
+
 echo "<hr> <hr>";
 
 /// Atividade 7: Desenho de Pirâmide
@@ -263,6 +269,14 @@ for ($i = 1; $i <= $altura_piramide; $i++) {
     }
     echo "<br>";
 }
+
+// Aecio Solutions
+// for($i = 1; $i <= $altura_piramide; $i++) {
+//     for($j = 1; $j <= $i; $j++) {
+//         echo "*";
+//     }
+//     echo "<br>";
+// }
 
 echo "<hr> <hr>";
 
@@ -307,5 +321,17 @@ $numero3 = 7;
 
 $numeros = array();
 
+//// Atividade 11: Soma de Dígitos
+/*
+    Solicita ao usuário um número inteiro positivo e calcula a soma de todos os seus dígitos.
+*/
+$numeroSoma = 599;
+// Implementação de Soma de Dígitos
+
+// Aecio Solutions
+// $numeros_array = str_split($numeroSoma);
+// $somaDigitos = array_sum($numeros_array);
+
+// echo "A soma dos dígitos de $numeroSoma é: $somaDigitos";
 
 ?>
