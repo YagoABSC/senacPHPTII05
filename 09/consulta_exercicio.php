@@ -9,7 +9,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $sql = "SELECT * FROM fornecedores";
+    $sql = "SELECT * FROM lista_compras.itens_compra";
     $stmt = $dbh->query($sql); //statament
     
     

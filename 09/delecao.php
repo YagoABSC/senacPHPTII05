@@ -8,10 +8,10 @@ $password = 'Senha@123';
 try{
     $pdo = new PDO($dsn, $user, $password);
     
-    $sql = "DELETE FROM itens_compra WHERE (nome_produto, quantidade) VALUES (:nome_produto, :quantidade)";
-
+    $sql = "DELETE FROM itens_compra WHERE id = :id";
+    
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['nome_produto' => 'Trakinas',  'quantidade' => 12]);
+    $stmt->execute(['id' => 5]);
     // print_r($stmt);
 
     echo "Item inserido com sucesso!";
