@@ -9,6 +9,7 @@ $password = 'Senha@123';
 
 try {
     $dbh = new PDO($dsn, $user, $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Conectado ao banco";
 } catch (PDOException $e) {
     // tentar reconectar após algum intervalo, por exemplo
