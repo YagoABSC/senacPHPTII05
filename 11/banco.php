@@ -1,16 +1,16 @@
 <?php
 
 $dsn = 'mysql:host=localhost;dbname=lista_compras';
-$username = 'usuario_lista_compras';
-$password = 'Senha@123';
+$username = 'root';
+$password = '';
 
 // Função para conectar ao banco de dados
 function connect(){
-
+    global $dsn, $username, $password;
     try{
         global $dsn, $username, $password;
         $pdo = new PDO($dsn, $username, $password);
-
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
 
     }catch(Exception $e){
@@ -45,10 +45,10 @@ function getAllItens(){
 function updateItem($id, $comprado) {
     $pdo = connect();
 
-    $sql = "UPDATE itens_compra SET comprado=:x WHERE id=:y";
+    $sql = "UPDATE itens_compra SET comprado=:comprado WHERE id=:id";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['x' => $comprado, 'y' => $id]);    
+    return $stmt->execute(['comprado' => $comprado, 'id' => $id]);    
 }
 
 // Função para atualizar um tem (Update)
@@ -56,12 +56,10 @@ function updateQuantidadeItem($id, $quantidade) {
 
     $pdo = connect();
     
-    $sql = "UPDATE itens_compra SET quantidade=:x WHERE id=:y";
+    $sql = "UPDATE itens_compra SET quantidade=:quantidade WHERE id=:id";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['x' => $quantidade, 'y' => $id]);
-
-
+    return $stmt->execute(['quantidade' => $quantidade, 'id' => $id]);
     
 }
 
