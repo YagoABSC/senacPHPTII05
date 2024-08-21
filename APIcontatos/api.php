@@ -10,9 +10,15 @@ switch($acao) {
         echo json_encode(DatabaseRepository::getAllItems());
         break;
 
+    case 'get':
+        $id = $_GET['id'];
+        echo json_encode(DatabaseRepository::getItemById($id));
+        break;
+
     case 'add':
         $data = json_decode(file_get_contents('php://input'), true);
-        DatabaseRepository::addItem($data['nome'], $data['telefone'], $data['email']);
+        $success = DatabaseRepository::addItem($data['nome'], $data['telefone'], $data['email']);
+        echo json_encode($success);
         break;
 
     case 'update':

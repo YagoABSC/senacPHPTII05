@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de contatos</title>
+</head>
+
+<body>
+    <h1>Listagem de Contatos</h1>
+
+    <ul id="contacts-list"></ul>
+
+    <script>
+        let contactsList = document.getElementById("contacts-list");
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Função para buscar os contatos do servidor
+            function fetchContatcts() {
+                return fetch('api.php?action=list')
+                    .then(response => response.json())
+                    .catch(error => console.error('Erro ao buscar contatos:', error));
+            }
+
+            function listarContatos() {
+                fetchContatcts().then(contacts => {
+                    contactsList.innerHTML = '';
+                    contacts.forEach(element => {
+                        const li = document.createElement('li');
+                        li.textContent = 'Nome: ${contacts.nome}';
+                        contactsList.appendChild(li);
+                    });
+                })
+            }
+
+            
+        })
+
+
+
+    </script>
+</body>
+
+</html>

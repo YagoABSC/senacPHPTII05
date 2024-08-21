@@ -19,14 +19,22 @@ public static function getAllItems(){
     $pdo = self::connect();
     $sql = "SELECT * FROM contatos_info";
     $stmt = $pdo->query($sql);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+public static function getItemById($id){
+    $pdo = self::connect();
+    $sql = "SELECT * FROM contatos_info WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 public static function addItem($nome, $telefone, $email){
     $pdo = self::connect();
     $sql = "INSERT INTO contatos_info (nome, telefone, email) VALUES (:nome, :telefone, :email)";
     $stmt = $pdo->prepare($sql);
-
     return $stmt->execute(['nome' => $nome, 'telefone' => $telefone, 'email' => $email]);
 }
 
