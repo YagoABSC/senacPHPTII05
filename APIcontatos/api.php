@@ -18,7 +18,7 @@ switch($acao) {
     case 'add':
         $data = json_decode(file_get_contents('php://input'), true);
         $success = DatabaseRepository::addItem($data['nome'], $data['telefone'], $data['email']);
-        echo json_encode($success);
+        echo json_encode(['success' => $success]);
         break;
 
     case 'update':
