@@ -24,12 +24,12 @@ switch($acao) {
     case 'update':
         $id = $_GET['id'];
         $data = json_decode(file_get_contents('php://input'), true);
-        DatabaseRepository::updateItem($id, $data['nome'], $data['telefone'], $data['email']);
+        $success = DatabaseRepository::updateItem($id, $data['nome'], $data['telefone'], $data['email']);
         break;
 
     case 'delete':
         $id = $_GET['id'];
-        DatabaseRepository::deleteItem($id);
+        $success = DatabaseRepository::deleteItem($id);
         break;
 
     default:

@@ -11,7 +11,17 @@
 <body>
     <h1>Listagem de Contatos</h1>
 
+    <div class="container">
+        <form id="deleteForm">
+                <input type="text" id="idDelete" name="idDelete" placeholder="Insira o número de registro">
+                <button type="submit">Deletar</button>
+        </form>
+    </div>
+
+    <div id="message"></div>
+
     <ul id="contacts-list"></ul>
+
 
     <script>
         
@@ -31,7 +41,7 @@
                     contactsList.innerHTML = '';
                     contacts.forEach(contact => {
                         const li = document.createElement('li');
-                        li.textContent = `Nome: ${contact.nome}, Telefone: ${contact.telefone}, Email: ${contact.email}`;
+                        li.textContent = `ID: ${contact.id}, Nome: ${contact.nome}, Telefone: ${contact.telefone}, Email: ${contact.email}`;
                         contactsList.appendChild(li);
                     });
                 })
@@ -42,6 +52,28 @@
 
             
         })
+
+        document.getElementById('deleteForm').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const id = document.getElementById('idDelete').value;
+
+            fetch(`api.php?action=delete&id=${id}`,{
+                method: 'DELETE',
+            })
+
+            .then(response => response.json())
+            .then(data => {
+                if(data.success){
+                    document.getElementById('message').innerHTML = 'Contato excluido com sucesso';
+                    document.getElementById('deleteForm').reset();
+                } else {
+                    document.getElementById('message').innerText = data.error ? data.error : 'Erro ao deletar contato';
+                }
+            })
+            // .catch(error => console.error('Erro ao cadastrar contato', erro)); 
+
+        });
 
 
 
