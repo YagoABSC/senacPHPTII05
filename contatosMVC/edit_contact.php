@@ -21,11 +21,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Contato</title>
+    <title>Editar Contato</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Adicionar Contato</h1>
+    <h1>Editar Contato</h1>
 
     <form action="edit_contact.php?id=<?= $contact['id'];?> " method="post">
         <label for="nome">Nome:</label>
