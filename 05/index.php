@@ -10,6 +10,10 @@ echo "Exemplo 1: For <br>";
 for ($i = 1; $i <= 5; $i++){
     echo "Numero $i <br>";
 }
+// Coding game
+for ($i = 1; $i <= $n; $i++){
+    echo str_repeat(" ",$i) . "$water <br>";
+}
 echo "<hr>";
 
 // Exemplo 2: White

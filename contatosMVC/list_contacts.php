@@ -42,6 +42,8 @@ $contacts = DatabaseRepository::getAllContacts();
         </tbody>
     </table>
 
+    <a href=""></a>
+
 </body>
 
 </html>
